@@ -1,4 +1,2 @@
 <?php
-require_once('../vendor/autoloader.php');
-
-echo \User\UserEx::hello();
+require_once('../vendor/main.php');
