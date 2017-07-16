@@ -1,2 +1,4 @@
 <?php
-echo date('d.m.Y H:i:s');
+require_once('../vendor/autoloader.php');
+
+echo \User\UserEx::hello();
