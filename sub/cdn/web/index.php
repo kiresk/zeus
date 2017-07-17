@@ -7,20 +7,11 @@
     <link rel='icon' type='image/png' href='assets/img/png/cdn128png.png'>
 
     <link rel="stylesheet" type="text/css" href="assets/css/theme.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/dropzone.min.css">
     <title>cdn > kire</title>
 <body>
 <div class="logo">
     <img class="logo" src="assets/img/png/cdn512png.png">
 </div>
-<div class="wrapper">
-    <form action="index.php" class="dropzone">
-        <div class="fallback">
-            <input name="file" type="file" multiple />
-        </div>
-    </form>
-</div>
 </body>
 <script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="assets/js/dropzone.min.js"></script>
 </html>
