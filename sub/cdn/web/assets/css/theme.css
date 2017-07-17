@@ -6,3 +6,8 @@ div.logo {
     margin: 0 auto;
     width: 512px;
 }
+/* CONTENT */
+div.wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+}
