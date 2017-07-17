@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/theme.css">
     <title>cdn > kire</title>
 <body>
-<img class="logo" src="assets/img/png/cdn512png.png">
+<div class="logo">
+    <img class="logo" src="assets/img/png/cdn512png.png">
+</div>
 </body>
 </html>
