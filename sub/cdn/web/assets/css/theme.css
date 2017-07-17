@@ -1,0 +1,9 @@
+body {
+    background-color: #d0eefe;
+}
+
+img.logo {
+    position: absolute;
+    left: 50%;
+    margin-left: -256px;
+}
