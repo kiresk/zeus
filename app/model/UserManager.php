@@ -33,7 +33,7 @@ class UserManager implements Nette\Security\IAuthenticator {
      * @throws Nette\Security\AuthenticationException
      */
     public function authenticate(array $credentials) {
-        list($username, $password) = $credentials;
+        [$username, $password] = $credentials;
 
         $row = $this->database->table(self::TABLE_NAME)->where(self::COLUMN_NAME, $username)->fetch();
 
