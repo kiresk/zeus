@@ -7,7 +7,7 @@
     <link rel='icon' type='image/png' href='assets/img/png/cdn128png.png'>
 
     <link rel="stylesheet" type="text/css" href="assets/css/theme.css">
-    <title>cdn > kire</title>
+    <title>cdn.kire.sk</title>
 <body>
 <div class="logo">
     <img class="logo" src="assets/img/png/cdn512png.png">
