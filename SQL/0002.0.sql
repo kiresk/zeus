@@ -1,5 +1,5 @@
 /**
- * Testing
+ * Testing 2
  */
 UPDATE User
 SET User.Role = 'user'
