@@ -20,6 +20,9 @@ services:
 	- App\Forms\FormFactory
 	- App\Forms\SignInFormFactory
 	- App\Forms\SignUpFormFactory
+	- App\Model\Article
+	- App\Model\Comment
+	- App\Model\Category
 	router: App\RouterFactory::createRouter
 	cacheStorage:
 		factory: Nette\Caching\Storages\DevNullStorage
