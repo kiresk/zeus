@@ -126,7 +126,7 @@ main aside.menu > p {
 main aside.menu > ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 2em;
 }
 main aside.menu > ul li {
     border: 1px solid #000000;

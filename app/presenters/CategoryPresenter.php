@@ -15,5 +15,6 @@ class CategoryPresenter extends BasePresenter {
         $this->template->openedCategory = $category->getCategory($ID, $Name);
         $this->template->categoryList = $category->getList();
         $this->template->articles = $article->getArticles_ByCategoryID($ID);
+        $this->template->newArticles = $category->getNewestArticles();
     }
 }

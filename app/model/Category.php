@@ -34,4 +34,10 @@ class Category {
         return $this->database->table(self::TABLE_NAME);
     }
 
+    public function getNewestArticles() {
+        return $this->database->table('Article')->where([
+            'PublishDate IS NOT NULL'
+        ])->limit(3)->order('ID DESC');
+    }
+
 }

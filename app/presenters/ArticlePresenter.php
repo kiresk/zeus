@@ -19,5 +19,6 @@ class ArticlePresenter extends BasePresenter {
             $this->redirect("Homepage:");
         }
         $this->template->article = $article;
+        $this->template->newArticles = $category->getNewestArticles();
     }
 }

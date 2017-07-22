@@ -26,6 +26,11 @@
             <ul>
                 <a n:foreach="$categoryList as $category" n:href="Category: $category->ID, $category->Name"><li>{$category->Name}</li></a>
             </ul>
+
+            <p>Najnovšie články</p>
+            <ul>
+                <a n:foreach="$newArticles as $newArticle" n:href="Article: $newArticle->ID, $newArticle->Title"><li>{$newArticle->Title}</li></a>
+            </ul>
         </aside>
         <section>
 	        {include content}
