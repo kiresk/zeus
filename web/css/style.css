@@ -100,6 +100,12 @@ main section article > p.summary > span {
 main section article > div.text {
     margin: 2em 0;
 }
+
+main section article div.text img.thumbnail {
+    max-width: 120px;
+    margin: 1em 0;
+}
+
 main section article div.summary {
     color: #a0a0a0;
 }
