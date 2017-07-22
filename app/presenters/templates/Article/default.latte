@@ -4,7 +4,7 @@
     <div class="summary">Autor: {$article->ref('User', 'UserID')->FullName}    </div>
     <div class="text">{$article->Text|noescape}</div>
     <div class="summary">
-        Článok bol publikovaný <time>{$article->PublishDate|date:'d.m.Y H:i'}</time>
+        Článok bol publikovaný <time datetime="{$article->PublishDate|date:'c'}" class="timeago">{$article->PublishDate|date:'d.m.Y H:i'}</time>
         v kategórií <a n:href="Category:default $article->ref('Category', 'CategoryID')->ID, $article->ref('Category', 'CategoryID')->Name">{$article->ref('Category', 'CategoryID')->Name}</a></div>
 </article>
 {/block}
