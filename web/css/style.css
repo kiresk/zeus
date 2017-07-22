@@ -102,7 +102,7 @@ main section article > div.text {
 }
 
 main section article div.text img.thumbnail {
-    max-width: 120px;
+    max-height: 400px;
     margin: 1em 0;
 }
 
