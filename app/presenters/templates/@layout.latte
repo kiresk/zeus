@@ -17,9 +17,12 @@
 </head>
 
 <body>
-	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
-
-	{include content}
+    <header class="top">
+        <p>Lorem ipsum dolor sit amet.</p>
+    </header>
+    <main>
+	    {include content}
+    </main>
 
 	{block scripts}
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
