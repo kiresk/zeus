@@ -21,3 +21,5 @@ services:
 	- App\Forms\SignInFormFactory
 	- App\Forms\SignUpFormFactory
 	router: App\RouterFactory::createRouter
+	cacheStorage:
+		factory: Nette\Caching\Storages\DevNullStorage
