@@ -37,7 +37,7 @@ class Article {
     public function getArticles_ByCategoryID(int $CategoryID, int $page = 1) {
         return $this->database->table(self::TABLE_NAME)->where([
             self::COLUMN_CATEGORY => $CategoryID
-        ]);
+        ])->order(self::COLUMN_PUBLISH_DATE . ' DESC');
     }
 
 }
