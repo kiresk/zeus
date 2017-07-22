@@ -3,7 +3,6 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/dg/adminer-custom" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/latte/latte" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/application" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/bootstrap" />
@@ -41,7 +40,6 @@
       <library name="PHP" type="php">
         <CLASSES>
           <root url="file://$MODULE_DIR$/vendor/composer" />
-          <root url="file://$MODULE_DIR$/vendor/dg/adminer-custom" />
           <root url="file://$MODULE_DIR$/vendor/latte/latte" />
           <root url="file://$MODULE_DIR$/vendor/nette/application" />
           <root url="file://$MODULE_DIR$/vendor/nette/bootstrap" />
@@ -65,7 +63,6 @@
         </CLASSES>
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/composer" />
-          <root url="file://$MODULE_DIR$/vendor/dg/adminer-custom" />
           <root url="file://$MODULE_DIR$/vendor/latte/latte" />
           <root url="file://$MODULE_DIR$/vendor/nette/application" />
           <root url="file://$MODULE_DIR$/vendor/nette/bootstrap" />

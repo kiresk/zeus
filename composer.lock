@@ -4,38 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1b605c3447f06d3e98b23078bf34e6ad",
-    "content-hash": "a37790f56f00895ba22d24961a838af7",
+    "content-hash": "85c381398a0ecb2640d91b220ebfae72",
     "packages": [
-        {
-            "name": "dg/adminer-custom",
-            "version": "v1.9.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dg/adminer-custom.git",
-                "reference": "023279c5803b4d2580f5934d1c178ce4838a1ae9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dg/adminer-custom/zipball/023279c5803b4d2580f5934d1c178ce4838a1ae9",
-                "reference": "023279c5803b4d2580f5934d1c178ce4838a1ae9",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "Customization for Adminer, the best database management tool written in PHP.",
-            "keywords": [
-                "database",
-                "elasticsearch",
-                "mongodb",
-                "mssql",
-                "mysql",
-                "oracle",
-                "postgresql",
-                "sqlite"
-            ],
-            "time": "2017-04-12 16:27:46"
-        },
         {
             "name": "latte/latte",
             "version": "v2.4.5",
@@ -105,7 +75,7 @@
                 "template",
                 "twig"
             ],
-            "time": "2017-07-14 06:41:29"
+            "time": "2017-07-14T06:41:29+00:00"
         },
         {
             "name": "nette/application",
@@ -180,7 +150,7 @@
             ],
             "description": "Nette Application MVC Component",
             "homepage": "https://nette.org",
-            "time": "2017-07-16 19:14:17"
+            "time": "2017-07-16T19:14:17+00:00"
         },
         {
             "name": "nette/bootstrap",
@@ -251,7 +221,7 @@
             ],
             "description": "Nette Bootstrap",
             "homepage": "https://nette.org",
-            "time": "2017-07-11 11:45:32"
+            "time": "2017-07-11T11:45:32+00:00"
         },
         {
             "name": "nette/caching",
@@ -313,7 +283,7 @@
             ],
             "description": "Nette Caching Component",
             "homepage": "https://nette.org",
-            "time": "2017-07-11 16:41:08"
+            "time": "2017-07-11T16:41:08+00:00"
         },
         {
             "name": "nette/component-model",
@@ -370,7 +340,7 @@
             ],
             "description": "Nette Component Model",
             "homepage": "https://nette.org",
-            "time": "2017-07-11 08:59:35"
+            "time": "2017-07-11T08:59:35+00:00"
         },
         {
             "name": "nette/database",
@@ -430,7 +400,7 @@
             ],
             "description": "Nette Database Component",
             "homepage": "https://nette.org",
-            "time": "2017-07-12 17:48:16"
+            "time": "2017-07-12T17:48:16+00:00"
         },
         {
             "name": "nette/di",
@@ -490,7 +460,7 @@
             ],
             "description": "Nette Dependency Injection Component",
             "homepage": "https://nette.org",
-            "time": "2017-07-11 17:55:11"
+            "time": "2017-07-11T17:55:11+00:00"
         },
         {
             "name": "nette/finder",
@@ -546,7 +516,7 @@
             ],
             "description": "Nette Finder: Files Searching",
             "homepage": "https://nette.org",
-            "time": "2017-07-10 23:47:08"
+            "time": "2017-07-10T23:47:08+00:00"
         },
         {
             "name": "nette/forms",
@@ -606,7 +576,7 @@
             ],
             "description": "Nette Forms: greatly facilitates web forms",
             "homepage": "https://nette.org",
-            "time": "2017-07-13 16:49:47"
+            "time": "2017-07-13T16:49:47+00:00"
         },
         {
             "name": "nette/http",
@@ -667,7 +637,7 @@
             ],
             "description": "Nette HTTP Component",
             "homepage": "https://nette.org",
-            "time": "2017-07-11 11:48:05"
+            "time": "2017-07-11T11:48:05+00:00"
         },
         {
             "name": "nette/mail",
@@ -728,7 +698,7 @@
             ],
             "description": "Nette Mail: Sending E-mails",
             "homepage": "https://nette.org",
-            "time": "2017-07-13 16:51:28"
+            "time": "2017-07-13T16:51:28+00:00"
         },
         {
             "name": "nette/neon",
@@ -782,7 +752,7 @@
             ],
             "description": "Nette NEON: parser & generator for Nette Object Notation",
             "homepage": "http://ne-on.org",
-            "time": "2017-07-11 18:29:08"
+            "time": "2017-07-11T18:29:08+00:00"
         },
         {
             "name": "nette/php-generator",
@@ -844,7 +814,7 @@
                 "php",
                 "scaffolding"
             ],
-            "time": "2017-07-11 19:07:13"
+            "time": "2017-07-11T19:07:13+00:00"
         },
         {
             "name": "nette/reflection",
@@ -908,7 +878,7 @@
                 "nette",
                 "reflection"
             ],
-            "time": "2017-07-11 19:28:57"
+            "time": "2017-07-11T19:28:57+00:00"
         },
         {
             "name": "nette/robot-loader",
@@ -973,7 +943,7 @@
                 "nette",
                 "trait"
             ],
-            "time": "2017-07-11 00:20:12"
+            "time": "2017-07-11T00:20:12+00:00"
         },
         {
             "name": "nette/safe-stream",
@@ -1034,7 +1004,7 @@
                 "nette",
                 "safe"
             ],
-            "time": "2017-07-13 18:20:37"
+            "time": "2017-07-13T18:20:37+00:00"
         },
         {
             "name": "nette/security",
@@ -1092,7 +1062,7 @@
             ],
             "description": "Nette Security: Access Control Component",
             "homepage": "https://nette.org",
-            "time": "2017-07-11 09:41:59"
+            "time": "2017-07-11T09:41:59+00:00"
         },
         {
             "name": "nette/utils",
@@ -1155,7 +1125,7 @@
             ],
             "description": "Nette Utility Classes",
             "homepage": "https://nette.org",
-            "time": "2017-07-11 19:25:29"
+            "time": "2017-07-11T19:25:29+00:00"
         },
         {
             "name": "tracy/tracy",
@@ -1222,7 +1192,7 @@
                 "nette",
                 "profiler"
             ],
-            "time": "2017-07-14 06:38:56"
+            "time": "2017-07-14T06:38:56+00:00"
         }
     ],
     "packages-dev": [
@@ -1280,7 +1250,7 @@
                 "testing",
                 "unit"
             ],
-            "time": "2016-03-19 14:34:02"
+            "time": "2016-03-19T14:34:02+00:00"
         }
     ],
     "aliases": [],
