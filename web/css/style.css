@@ -5,6 +5,10 @@ body {
     padding: 0;
 }
 
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
 p, div {
     margin: 0;
     padding: 0;
@@ -16,6 +20,16 @@ header.top {
     padding: 12px 0;
     margin: 0;
 }
+header.top a:link,
+header.top a:visited,
+header.top a:active {
+    color: #d1d0d0;
+    text-decoration: underline;
+}
+header.top a:hover {
+    color: #6d6dfa;
+    text-decoration: underline;
+}
 
 header.top > p {
     max-width: 960px;
@@ -26,25 +40,78 @@ header.top > p {
 
 main {
     max-width: 960px;
-    padding: 0 10px;
     margin: 0 auto;
 }
 
-main > p {
+main :after {
+    display: table;
+    clear: both;
+}
+
+main section {
+    max-width: 594px;
+    padding: 0 10px;
+}
+
+main section > p {
     margin: 0 0 15px;
     text-indent: 2em;
 }
 
-main p a:link, a:visited, a:active {
+main section p a:link,
+main section p a:visited,
+main section p a:active {
     color: #4e4efa;
     text-decoration: none;
     font-weight: 600;
 }
 
-main p a:hover {
+main section p a:hover {
     color: #6d6dfa;
     text-decoration: underline;
     font-weight: 600;
+}
+
+main aside.menu {
+    float: right;
+    width: 330px;
+    margin: 5px 0;
+}
+main aside.menu > p {
+    font-weight: 600;
+    padding: 0 0 0.5em;
+}
+main aside.menu > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+main aside.menu > ul li {
+    border: 1px solid #000000;
+    padding: 8px;
+    margin-bottom: 2px;
+}
+main aside.menu > ul li:hover {
+    background-color: #e2e2e2;
+}
+main aside.menu a:link,
+main aside.menu a:visited,
+main aside.menu a:active {
+    color: #4e4efa;
+    text-decoration: none;
+    font-weight: 600;
+}
+main aside.menu a:hover {
+    color: #6d6dfa;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer {
+    max-width: 960px;
+    padding: 0 10px 15px;
+    margin: 0 auto;
+    color: #939393;
 }
 
 #ajax-spinner {

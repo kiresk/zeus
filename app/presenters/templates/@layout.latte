@@ -18,11 +18,34 @@
 
 <body>
     <header class="top">
-        <p>Lorem ipsum dolor sit amet.</p>
+        <p><a href="#">Lorem ipsum</a> dolor sit amet.</p>
     </header>
     <main>
-	    {include content}
+        <aside class="menu">
+            <p>Kategórie</p>
+            <ul>
+                <a href="#"><li>Duis fringilla elit in laoreet imperdiet</li></a>
+                <a href="#"><li>Prvý odkaz</li></a>
+                <a href="#"><li>Phasellus vitae egestas libero, id tincidunt ante.</li></a>
+                <a href="#"><li>Prvý odkaz</li></a>
+                <a href="#"><li>Prvý odkaz</li></a>
+                <a href="#"><li>Prvý odkaz</li></a>
+                <a href="#"><li>Prvý odkaz</li></a>
+                <a href="#"><li>Prvý odkaz</li></a>
+                <a href="#"><li>Prvý odkaz</li></a>
+                <a href="#"><li>Prvý odkaz</li></a>
+                <a href="#"><li>Prvý odkaz</li></a>
+                <a href="#"><li>Prvý odkaz</li></a>
+            </ul>
+        </aside>
+        <section>
+	        {include content}
+        </section>
     </main>
+
+    <footer>
+        Erik Poliak &copy; 2012 - {date('Y')} - Všetky práva vyhradené
+    </footer>
 
 	{block scripts}
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
