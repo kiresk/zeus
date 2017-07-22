@@ -1,0 +1,26 @@
+{block content}
+<article n:foreach="$articles as $article">
+    <h3><a n:href="Article:default $article->ID, $article->Title">{$article->Title}</a></h3>
+    <p class="summary">
+        Autor: {$article->ref('User', 'UserID')->FullName}
+        <span>Vydané: {$article->PublishDate|date:'d.m.Y H:i'}</span>
+    </p>
+    <p class="perex">
+        {$article->Text|truncate:300|striptags}
+        <a n:href="Article:default $article->ID, $article->Title">Otvoriť článok</a>
+    </p>
+        <p class="summary">
+            Kategória článku: <a n:href="Category:default $article->ref('Category', 'CategoryID')->ID, $article->ref('Category', 'CategoryID')->Name">{$article->ref('Category', 'CategoryID')->Name}</a>
+            <span>Diskusia: <a href="#">0 príspevkov</a></span>
+        </p>
+</article>
+{/block}
+
+{block scripts}
+    {include parent}
+{/block}
+
+
+{block head}
+
+{/block}

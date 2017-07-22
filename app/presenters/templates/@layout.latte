@@ -24,18 +24,7 @@
         <aside class="menu">
             <p>Kategórie</p>
             <ul>
-                <a href="#"><li>Duis fringilla elit in laoreet imperdiet</li></a>
-                <a href="#"><li>Prvý odkaz</li></a>
-                <a href="#"><li>Phasellus vitae egestas libero, id tincidunt ante.</li></a>
-                <a href="#"><li>Prvý odkaz</li></a>
-                <a href="#"><li>Prvý odkaz</li></a>
-                <a href="#"><li>Prvý odkaz</li></a>
-                <a href="#"><li>Prvý odkaz</li></a>
-                <a href="#"><li>Prvý odkaz</li></a>
-                <a href="#"><li>Prvý odkaz</li></a>
-                <a href="#"><li>Prvý odkaz</li></a>
-                <a href="#"><li>Prvý odkaz</li></a>
-                <a href="#"><li>Prvý odkaz</li></a>
+                <a n:foreach="$categoryList as $category" n:href="Category: $category->ID, $category->Name"><li>{$category->Name}</li></a>
             </ul>
         </aside>
         <section>

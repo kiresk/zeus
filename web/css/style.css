@@ -18,7 +18,7 @@ header.top {
     background-color: #000000;
     color: #FFFFFF;
     padding: 12px 0;
-    margin: 0;
+    margin: 0 0 2em;
 }
 header.top a:link,
 header.top a:visited,
@@ -70,6 +70,48 @@ main section p a:hover {
     color: #6d6dfa;
     text-decoration: underline;
     font-weight: 600;
+}
+
+main section article {
+    margin: 0 0 2em 0;
+}
+main section article > h3 a:link,
+main section article > h3 a:hover,
+main section article > h3 a:visited,
+main section article > h3 a:active {
+    color: #000000;
+    text-decoration: none;
+}
+main section article > p.perex {
+    margin: 15px 0;
+}
+main section article > p.summary {
+    color: #a0a0a0;
+}
+main section article > p.summary a:link,
+main section article > p.summary a:visited,
+main section article > p.summary a:active {
+    color: #a0a0a0;
+}
+main section article > p.summary > span {
+    float: right;
+}
+
+main section article > div.text {
+    margin: 2em 0;
+}
+main section article div.summary {
+    color: #a0a0a0;
+}
+main section article div.summary a:link,
+main section article div.summary a:visited,
+main section article div.summary a:hover,
+main section article div.summary a:active {
+    color: #000000;
+    text-decoration: none;
+}
+main section article div.summary > time {
+    color: #000000;
 }
 
 main aside.menu {

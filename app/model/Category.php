@@ -23,4 +23,8 @@ class Category {
         $this->database = $database;
     }
 
+    public function getList() {
+        return $this->database->table(self::TABLE_NAME);
+    }
+
 }
