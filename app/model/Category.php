@@ -23,6 +23,13 @@ class Category {
         $this->database = $database;
     }
 
+    public function getCategory($ID, $Name) {
+        return $this->database->table(self::TABLE_NAME)->where([
+            self::COLUMN_ID => $ID,
+        ])->fetch();
+    }
+
+
     public function getList() {
         return $this->database->table(self::TABLE_NAME);
     }

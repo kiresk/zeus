@@ -1,6 +1,6 @@
 {block content}
 <article>
-    <h1>{$article->Title}</h1>
+    <h1 n:block="title">{$article->Title}</h1>
     <div class="summary">Autor: {$article->ref('User', 'UserID')->FullName}    </div>
     <div class="text">{$article->Text|noescape}</div>
     <div class="summary">

@@ -1,4 +1,5 @@
 {block content}
+<h2 n:block="title">{$openedCategory->Name}</h2>
 <article n:foreach="$articles as $article">
     <h3><a n:href="Article:default $article->ID, $article->Title">{$article->Title}</a></h3>
     <p class="summary">
