@@ -3,7 +3,7 @@ $(function(){
 });
 
 jQuery(document).ready(function() {
-    jQuery("time.timeago").timeago();
+    jQuery("time.timeago").timeago().show();
 });
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

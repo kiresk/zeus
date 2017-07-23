@@ -22,6 +22,10 @@ p, div {
     padding: 0;
 }
 
+time.timeago {
+    display: none;
+}
+
 header.top {
     background-color: #000000;
     color: #FFFFFF;
