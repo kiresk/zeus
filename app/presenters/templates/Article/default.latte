@@ -7,6 +7,30 @@
         Článok bol publikovaný <time datetime="{$article->PublishDate|date:'c'}" class="timeago">{$article->PublishDate|date:'d.m.Y H:i'}</time>
         <nobr>v kategórií <a n:href="Category:default $article->ref('Category', 'CategoryID')->ID, $article->ref('Category', 'CategoryID')->Name">{$article->ref('Category', 'CategoryID')->Name}</a></nobr></div>
 </article>
+<div class="discussion">
+    <h4>Diskusia k článku ({$discussion['count']})</h4>
+    <div n:foreach="$discussion['comments'] as $c">
+        <p class="info">
+            {var $author = $c->ref('User', 'User')}
+            {$author->FullName}
+            {if $author->Role == 'admin'}&nbsp;<span title="moderátor" class="mod">MOD</span> {/if}
+            <time datetime="{$c->CreationDate|date:'c'}" class="timeago">{$c->CreationDate|date:'d.m.Y H:i'}</time>
+        </p>
+
+        {$c->Text}
+        <div class="answers">
+            <div n:foreach="$comment->getAnswers($c->ID) as $answer">
+                <p class="info">
+                    {var $author = $answer->ref('User', 'User')}
+                    {$author->FullName}
+                    {if $author->Role == 'admin'}&nbsp;<span title="moderátor" class="mod">MOD</span> {/if}
+                    <time datetime="{$answer->CreationDate|date:'c'}" class="timeago">{$answer->CreationDate|date:'d.m.Y H:i'}</time>
+                </p>
+                {$answer->Text}
+            </div>
+        </div>
+    </div>
+</div>
 {/block}
 
 {block scripts}

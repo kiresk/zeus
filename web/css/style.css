@@ -138,6 +138,37 @@ main section footer.paginator a.active {
     background-color: #cccccc;
 }
 
+main section div.discussion {
+    padding: 0 0 2em;
+}
+main section div.discussion > div {
+    margin: 0 0 1em;
+    border: 1px solid #cccccc;
+    padding: 1em;
+}
+main section div.discussion > div > p.info,
+main section div.discussion div > div.answers > div > p.info {
+    color: #bbbbbb;
+    margin: 0;
+}
+main section div.discussion div > p.info > span.mod {
+    background-color: #4e4efa;
+    font-size: 0.7em;
+    color: #FFFFFF;
+    padding: 0.1em 0.4em;
+}
+main section div.discussion div > p.info > time {
+    float: right;
+}
+main section div.discussion > div > div.answers {
+    margin: 1em 0 0 2em;
+}
+main section div.discussion > div > div.answers > div {
+    border: 1px solid #dddddd;
+    padding: 0.5em 1em;
+    margin: 0 0 0.5em;
+}
+
 main aside.menu {
     float: right;
     width: 330px;
