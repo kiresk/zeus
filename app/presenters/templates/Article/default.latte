@@ -8,7 +8,7 @@
         <nobr>v kategórií <a n:href="Category:default $article->ref('Category', 'CategoryID')->ID, $article->ref('Category', 'CategoryID')->Name">{$article->ref('Category', 'CategoryID')->Name}</a></nobr></div>
 </article>
 <div class="discussion">
-    <h4><a n:href="Discussion: $article->ID, $article->Title">Diskusia k článku ({$discussion['count']})</a></h4>
+    <h4><a n:href="Discussion: $article->ID, $article->Title">Diskusia k článku{if $discussion['count'] > 0} ({$discussion['count']}){/if}</a></h4>
     <div n:foreach="$discussion['comments'] as $c">
         <p class="info">
             {var $author = $c->ref('User', 'User')}

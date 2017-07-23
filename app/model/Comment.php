@@ -29,7 +29,7 @@ class Comment {
         $this->database = $database;
     }
 
-    public function getComments_ByArticle(int $ArticleID, int $limit = self::COUNT_RECENT) {
+    public function getComments_ByArticle(int $ArticleID, int $limit = self::COUNT_RECENT, string $orderby = self::COLUMN_CREATION_DATE) {
         $sel = $this->database->table(self::TABLE_NAME)->where([
             self::COLUMN_ARTICLE => $ArticleID
         ]);
@@ -40,6 +40,7 @@ class Comment {
         if ($limit > 0) {
             $sel->limit($limit);
         }
+        $sel->order($orderby);
         return ['count' => $count, 'comments' => $sel];
     }
 
