@@ -17,7 +17,7 @@
                 Diskusia:
                 <a n:href="Discussion: $article->ID, $article->Title">{$comment->getComments_ByArticle($article->ID)['count']}
                     {if $commentCount == 0 || $commentCount >= 5} príspevkov
-                    {elseif $commentsCount == 1} príspevok
+                    {elseif $commentCount == 1} príspevok
                     {else} príspevky{/if}
                 </a>
             </span>
