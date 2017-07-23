@@ -17,5 +17,6 @@ class DiscussionPresenter extends BasePresenter {
         $this->template->discussion = $comment->getComments_ByArticle($ID, 0);
         $this->template->categoryList = $category->getList(); // sidebar
         $this->template->newArticles = $category->getNewestArticles(); // sidebar
+        $this->template->recentComments = $comment->getComments_ByArticle()['comments'];
     }
 }

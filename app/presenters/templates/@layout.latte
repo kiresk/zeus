@@ -31,6 +31,11 @@
             <ul>
                 <a title="{$newArticle->Title} ({$newArticle->ref('Category', 'CategoryID')->Name})" n:foreach="$newArticles as $newArticle" n:href="Article: $newArticle->ID, $newArticle->Title"><li>{$newArticle->Title}</li></a>
             </ul>
+
+            <p>Najnovšie komentáre v diskusiách</p>
+            <ul>
+                <a n:href="Discussion: $rcomment->Article, $rcomment->ref('Article', 'Article')->Title" n:foreach="$recentComments as $rcomment"><li>{$rcomment->ref('Article', 'Article')->Title}</li></a>
+            </ul>
         </aside>
         <section>
 	        {include content}

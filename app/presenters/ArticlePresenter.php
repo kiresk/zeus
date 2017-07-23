@@ -22,6 +22,7 @@ class ArticlePresenter extends BasePresenter {
         }
         $this->template->article = $article;
         $this->template->newArticles = $category->getNewestArticles();
+        $this->template->recentComments = $comment->getComments_ByArticle()['comments'];
         $this->template->comment = $comment;
         $this->template->discussion = $comment->getComments_ByArticle($ID, Comment::COUNT_RECENT, Comment::COLUMN_CREATION_DATE . ' DESC');
     }

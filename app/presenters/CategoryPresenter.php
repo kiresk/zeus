@@ -31,5 +31,6 @@ class CategoryPresenter extends BasePresenter {
         $this->template->comment = $comment;
         $this->template->categoryList = $category->getList(); // sidebar
         $this->template->newArticles = $category->getNewestArticles(); // sidebar
+        $this->template->recentComments = $comment->getComments_ByArticle()['comments']; // sidebar
     }
 }
