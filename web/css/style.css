@@ -53,7 +53,7 @@ main section {
     padding: 0 10px;
 }
 
-main section p {
+main section p.indent {
     margin: 0 0 15px;
     text-indent: 2em;
 }

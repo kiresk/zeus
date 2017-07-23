@@ -6,7 +6,7 @@
         Autor: {$article->ref('User', 'UserID')->FullName}
         <span>Vydané: <time>{$article->PublishDate|date:'d.m.Y H:i'}</time></span>
     </p>
-    <p class="perex">
+    <p class="perex indent">
         {$article->Text|truncate:300|striptags}
         <a n:href="Article:default $article->ID, $article->Title">Otvoriť článok</a>
     </p>
