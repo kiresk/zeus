@@ -52,8 +52,8 @@ main section {
     padding: 0 10px;
 }
 
-p.indent, div.indent {
-    margin: 0 0 15px !important;
+.indent p {
+    margin: 0 0 15px;
     text-indent: 2em;
 }
 
