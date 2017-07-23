@@ -15,6 +15,17 @@
             <span>Diskusia: <a href="#">0 príspevkov</a></span>
         </p>
 </article>
+<footer n:if="$paginator->getPageCount() > 1" class="paginator">
+    <a title="Prejsť na prvú stránku" n:if="!$paginator->isFirst()" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $paginator->getFirstPage()">&laquo;&nbsp;Prvá</a>
+    <a title="Prejsť na predchádzajúcu stránku" n:if="!$paginator->isFirst()" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $paginator->getPage() - 1">&lsaquo;&nbsp;Predchádzajúca</a>
+
+    {for $page = $paginator->getFirstPage(); $page <= $paginator->getPageCount(); $page++}
+        <a {if $paginator->page == $page}class="active" {/if}title="Prejsť na stránku s číslom {$page}" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $page">{$page}</a>
+    {/for}
+
+    <a title="Prejsť na nasledujúcu stránku" n:if="!$paginator->isLast()" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $paginator->getPage() + 1">Nasledujúca&nbsp;&rsaquo;</a>
+    <a title="Prejsť na poslednú stránku" n:if="!$paginator->isLast()" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $paginator->getLastPage()">Posledná&nbsp;&raquo;</a>
+</footer>
 {/block}
 
 {block scripts}

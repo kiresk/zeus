@@ -13,7 +13,8 @@ class Category {
     const
         TABLE_NAME = 'Category',
         COLUMN_ID = 'ID',
-        COLUMN_NAME = 'Name';
+        COLUMN_NAME = 'Name',
+        ARTICLES_PER_PAGE = 7;
 
 
     /** @var Nette\Database\Context */

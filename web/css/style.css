@@ -119,6 +119,25 @@ main section article div.summary > time {
     color: #000000;
 }
 
+main section footer.paginator {
+    padding: 2em 0;
+    text-align: right;
+    line-height: 3em;
+}
+main section footer.paginator a:link,
+main section footer.paginator a:visited,
+main section footer.paginator a:active {
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border: 1px solid #000000;
+}
+main section footer.paginator a:hover {
+    background-color: #bbbbbb;
+}
+main section footer.paginator a.active {
+    background-color: #cccccc;
+}
+
 main aside.menu {
     float: right;
     width: 330px;

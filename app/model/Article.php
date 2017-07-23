@@ -40,4 +40,10 @@ class Article {
         ])->order(self::COLUMN_PUBLISH_DATE . ' DESC');
     }
 
+    public function getArticlesCount_ByCategoryID(int $CategoryID) {
+        return $this->database->table(self::TABLE_NAME)->where([
+            self::COLUMN_CATEGORY => $CategoryID
+        ])->count();
+    }
+
 }
