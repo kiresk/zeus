@@ -1,0 +1,1 @@
+ALTER TABLE `Comment` ADD CONSTRAINT `CommentParent` FOREIGN KEY (`Parent`) REFERENCES `Comment` (`ID`);

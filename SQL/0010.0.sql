@@ -1,0 +1,1 @@
+ALTER TABLE `Article` ADD CONSTRAINT `ArticleCategory` FOREIGN KEY (`CategoryID`) REFERENCES `Category` (`ID`);

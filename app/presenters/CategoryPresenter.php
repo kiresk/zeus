@@ -18,7 +18,12 @@ class CategoryPresenter extends BasePresenter {
         $paginator->setItemsPerPage(Category::ARTICLES_PER_PAGE);
         $paginator->setPage($page);
 
-        $this->template->articles = $article->getArticles_ByCategoryID($ID)->limit($paginator->getLength(), $paginator->getOffset()); // articles in category
+        $articles = $article->getArticles_ByCategoryID($ID); // articles in category)
+        if ($articles->count() === 0) {
+            $this->flashMessage('Kategória neexistuje');
+            $this->redirect("Homepage:");
+        }
+        $this->template->articles = $articles->limit($paginator->getLength(), $paginator->getOffset()); // articles in category
         $this->template->paginator = $paginator;
         $this->template->openedCategory = $category->getCategory($ID, $Name); // category name in h1
         $this->template->categoryList = $category->getList(); // sidebar
