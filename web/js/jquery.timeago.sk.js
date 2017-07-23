@@ -9,26 +9,23 @@
 }(function (jQuery) {
   // Slovak
   (function() {
-  	function f(n, d, a) {
-  		return a[d>=0 ? 0 : a.length===2 || n<5 ? 1 : 2];
-  	}
   
   	jQuery.timeago.settings.strings = {
-  		prefixAgo:     'pred',
-  		prefixFromNow: 'o',
+  		prefixAgo:     null,
+  		prefixFromNow: null,
   		suffixAgo:     null,
   		suffixFromNow: null,
-  		seconds: function(n, d) {return f(n, d, ['menej ako minútou', 'menej ako minútu']);},
-  		minute:  function(n, d) {return f(n, d, ['minútou', 'minútu']);},
-  		minutes: function(n, d) {return f(n, d, ['%d minútami', '%d minúty', '%d minút']);},
-  		hour:    function(n, d) {return f(n, d, ['hodinou', 'hodinu']);},
-  		hours:   function(n, d) {return f(n, d, ['%d hodinami', '%d hodiny', '%d hodín']);},
-  		day:     function(n, d) {return f(n, d, ['%d dňom', '%d deň']);},
-  		days:    function(n, d) {return f(n, d, ['%d dňami', '%d dni', '%d dní']);},
-  		month:   function(n, d) {return f(n, d, ['%d mesiacom', '%d mesiac']);},
-  		months:  function(n, d) {return f(n, d, ['%d mesiacmi', '%d mesiace', '%d mesiacov']);},
-  		year:    function(n, d) {return f(n, d, ['%d rokom', '%d rok']);},
-  		years:   function(n, d) {return f(n, d, ['%d rokmi', '%d roky', '%d rokov']);}
+  		seconds: 'teraz',
+  		minute:  'pred minútou',
+  		minutes: 'pred %d minútami',
+  		hour:    'pred hodinou',
+  		hours:   'pred %d hodinami',
+  		day:     'včera',
+  		days:    'pred %d dňami',
+  		month:   'pred mesiacom',
+  		months:  'pred %d mesiacmi',
+  		year:    'pred rokom',
+  		years:   'pred %d rokmi'
   	};
   })();
 }));
