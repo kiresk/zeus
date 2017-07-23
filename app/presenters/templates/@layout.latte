@@ -24,12 +24,12 @@
         <aside class="menu">
             <p>Kategórie</p>
             <ul>
-                <a n:foreach="$categoryList as $category" n:href="Category: $category->ID, $category->Name"><li>{$category->Name}</li></a>
+                <a title="Kategória: {$category->Name}" n:foreach="$categoryList as $category" n:href="Category: $category->ID, $category->Name"><li>{$category->Name}</li></a>
             </ul>
 
             <p>Najnovšie články</p>
             <ul>
-                <a n:foreach="$newArticles as $newArticle" n:href="Article: $newArticle->ID, $newArticle->Title"><li>{$newArticle->Title}</li></a>
+                <a title="{$newArticle->Title} ({$newArticle->ref('Category', 'CategoryID')->Name})" n:foreach="$newArticles as $newArticle" n:href="Article: $newArticle->ID, $newArticle->Title"><li>{$newArticle->Title}</li></a>
             </ul>
         </aside>
         <section>
