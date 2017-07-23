@@ -36,7 +36,10 @@ class Comment {
         $count = $sel->count();
         $sel->where([
             self::COLUMN_PARENT . ' IS NULL'
-        ])->limit($limit);
+        ]);
+        if ($limit > 0) {
+            $sel->limit($limit);
+        }
         return ['count' => $count, 'comments' => $sel];
     }
 

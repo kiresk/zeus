@@ -1,14 +1,11 @@
 {block content}
-<article>
-    <h1 n:block="title">{$article->Title}</h1>
-    <div class="summary">Autor: {$article->ref('User', 'UserID')->FullName}    </div>
-    <div class="text indent">{$article->Text|noescape}</div>
-    <div class="summary">
-        Článok bol publikovaný <time datetime="{$article->PublishDate|date:'c'}" class="timeago">{$article->PublishDate|date:'d.m.Y H:i'}</time>
-        <nobr>v kategórií <a n:href="Category:default $article->ref('Category', 'CategoryID')->ID, $article->ref('Category', 'CategoryID')->Name">{$article->ref('Category', 'CategoryID')->Name}</a></nobr></div>
-</article>
 <div class="discussion">
-    <h4><a n:href="Discussion: $article->ID, $article->Title">Diskusia k článku ({$discussion['count']})</a></h4>
+    <h3 n:block="title">Diskusia: {$article->Title}</h3>
+    {if count($discussion['comments']) > 0}
+        <a n:href="Article:default $article->ID, $article->Title">&laquo;&nbsp;Späť na článok</a>
+    {else}
+        <p>Článok <strong>{$article->Title}</strong> neobsahuje diskusiu.</p>
+    {/if}
     <div n:foreach="$discussion['comments'] as $c">
         <p class="info">
             {var $author = $c->ref('User', 'User')}
@@ -16,7 +13,7 @@
             {if $author->Role == 'admin'}&nbsp;<span title="moderátor" class="mod">MOD</span> {/if}
             <time datetime="{$c->CreationDate|date:'c'}" class="timeago">{$c->CreationDate|date:'d.m.Y H:i'}</time>
         </p>
-        {$c->Text|striptags|truncate:250:'...(skrátené)'}
+        {$c->Text|striptags}
 
         <div class="answers">
             <div n:foreach="$comment->getAnswers($c->ID) as $answer">
@@ -26,11 +23,11 @@
                     {if $author->Role == 'admin'}&nbsp;<span title="moderátor" class="mod">MOD</span> {/if}
                     <time datetime="{$answer->CreationDate|date:'c'}" class="timeago">{$answer->CreationDate|date:'d.m.Y H:i'}</time>
                 </p>
-                {$answer->Text|striptags|truncate:150:'...(skrátené)'}
+                {$answer->Text|striptags}
             </div>
         </div>
     </div>
-    <a n:href="Discussion: $article->ID, $article->Title">Zobraziť celú diskusiu</a>
+    <a n:href="Article:default $article->ID, $article->Title">&laquo;&nbsp;Späť na článok</a>
 </div>
 {/block}
 

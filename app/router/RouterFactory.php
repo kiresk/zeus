@@ -29,6 +29,7 @@ class RouterFactory {
                 Route::FILTER_TABLE => [
                     'kategoria' => 'Category',
                     'clanok' => 'Article',
+                    'diskusia' => 'Discussion',
                 ],
             ],
             'action' => 'default',
