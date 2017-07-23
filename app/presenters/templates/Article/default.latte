@@ -5,7 +5,7 @@
     <div class="text indent">{$article->Text|noescape}</div>
     <div class="summary">
         Článok bol publikovaný <time datetime="{$article->PublishDate|date:'c'}" class="timeago">{$article->PublishDate|date:'d.m.Y H:i'}</time>
-        v kategórií <a n:href="Category:default $article->ref('Category', 'CategoryID')->ID, $article->ref('Category', 'CategoryID')->Name">{$article->ref('Category', 'CategoryID')->Name}</a></div>
+        <nobr>v kategórií <a n:href="Category:default $article->ref('Category', 'CategoryID')->ID, $article->ref('Category', 'CategoryID')->Name">{$article->ref('Category', 'CategoryID')->Name}</a></nobr></div>
 </article>
 {/block}
 
