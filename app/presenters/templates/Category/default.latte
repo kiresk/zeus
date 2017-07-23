@@ -12,7 +12,15 @@
     </p>
         <p class="summary">
             Kategória článku: <a n:href="Category: $article->ref('Category', 'CategoryID')->ID, $article->ref('Category', 'CategoryID')->Name">{$article->ref('Category', 'CategoryID')->Name}</a>
-            <span>Diskusia: <a n:href="Discussion: $article->ID, $article->Title">0 príspevkov</a></span>
+            <span>
+                {var $commentCount = $comment->getComments_ByArticle($article->ID)['count']}
+                Diskusia:
+                <a n:href="Discussion: $article->ID, $article->Title">{$comment->getComments_ByArticle($article->ID)['count']}
+                    {if $commentCount == 0 || $commentCount >= 5} príspevkov
+                    {elseif $commentsCount == 1} príspevok
+                    {else} príspevky{/if}
+                </a>
+            </span>
         </p>
 </article>
 <footer n:if="$paginator->getPageCount() > 1" class="paginator">
