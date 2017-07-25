@@ -23,6 +23,6 @@ services:
 	- App\Model\Article
 	- App\Model\Comment
 	- App\Model\Category
-	router: App\RouterFactory::createRouter
+	router: App\Router\RouterFactory::createRouter
 	cacheStorage:
 		factory: Nette\Caching\Storages\DevNullStorage

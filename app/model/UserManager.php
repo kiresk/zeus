@@ -32,7 +32,7 @@ class UserManager implements Nette\Security\IAuthenticator {
      * @return Nette\Security\Identity
      * @throws Nette\Security\AuthenticationException
      */
-    public function authenticate(array $credentials) {
+    public function authenticate(array $credentials): Nette\Security\IIdentity {
         $row = $this->database->table(self::TABLE_NAME)->where(self::COLUMN_NAME, $credentials[0])->fetch();
 
         if (!$row) {
