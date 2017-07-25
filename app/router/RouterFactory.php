@@ -10,13 +10,10 @@ use Nette\Utils\Strings;
 class RouterFactory {
     use Nette\StaticClass;
 
-    /**
-     * @return Nette\Application\IRouter
-     */
-    public static function createRouter() {
+    public static function createRouter(): RouteList {
         $router = new RouteList;
         $router[] = new Route('<presenter>/<Name>-<ID [0-9]+>[/stranka-<page [0-9]+>].html', [
-            NULL  => [
+            NULL => [
                 Route::FILTER_OUT => function(array $params) {
                     if (!empty($params['Name'])) {
                         $params['Name'] = Strings::webalize($params['Name']);
