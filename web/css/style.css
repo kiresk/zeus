@@ -244,3 +244,17 @@ a[href^="#error:"] {
 	background: red;
 	color: white;
 }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+img.circle {
+    border-radius: 50%;
+}
+img.blackwhite:not(:hover) {
+    filter: grayscale(100%);
+}
