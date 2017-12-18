@@ -23,27 +23,8 @@
     {foreach $flashes as $flash}
         <div class="flash {$flash->type}">{$flash->message}</div>
     {/foreach}
-    <main>
-        <aside class="menu">
-            <p>Kategórie</p>
-            <ul>
-                <a title="Kategória: {$category->Name}" n:foreach="$categoryList as $category" n:href="Category: $category->ID, $category->Name"><li>{$category->Name}</li></a>
-            </ul>
 
-            <p>Najnovšie články</p>
-            <ul>
-                <a title="{$newArticle->Title} ({$newArticle->ref('Category', 'CategoryID')->Name})" n:foreach="$newArticles as $newArticle" n:href="Article: $newArticle->ID, $newArticle->Title"><li>{$newArticle->Title}</li></a>
-            </ul>
-
-            <p>Najnovšie komentáre v diskusiách</p>
-            <ul>
-                <a n:href="Discussion: $rcomment->Article, $rcomment->ref('Article', 'Article')->Title" n:foreach="$recentComments as $rcomment"><li>{$rcomment->ref('Article', 'Article')->Title}</li></a>
-            </ul>
-        </aside>
-        <section>
-	        {include content}
-        </section>
-    </main>
+    {include content}
 
     <footer>
         Erik Poliak &copy; 2012 - {date('Y')} - Všetky práva vyhradené

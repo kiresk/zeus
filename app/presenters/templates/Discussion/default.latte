@@ -1,34 +1,41 @@
 {block content}
-<div class="discussion">
-    <h3 n:block="title">Diskusia: {$article->Title}</h3>
-    {if count($discussion['comments']) > 0}
-        <a n:href="Article:default $article->ID, $article->Title">&laquo;&nbsp;Späť na článok</a>
-    {else}
-        <p>Článok <strong>{$article->Title}</strong> neobsahuje diskusiu.</p>
-    {/if}
-    <div n:foreach="$discussion['comments'] as $c">
-        <p class="info">
-            {var $author = $c->ref('User', 'User')}
-            {$author->FullName}
-            {if $author->Role == 'admin'}&nbsp;<span title="moderátor" class="mod">MOD</span> {/if}
-            <time datetime="{$c->CreationDate|date:'c'}" class="timeago">{$c->CreationDate|date:'d.m.Y H:i'}</time>
-        </p>
-        {$c->Text|striptags}
+    <main>
+        {include '../@aside.latte'}
+        <section>
+            <div class="discussion">
+                <h3 n:block="title">Diskusia: {$article->Title}</h3>
+                {if count($discussion['comments']) > 0}
+                    <a n:href="Article:default $article->ID, $article->Title">&laquo;&nbsp;Späť na článok</a>
+                {else}
+                    <p>Článok <strong>{$article->Title}</strong> neobsahuje diskusiu.</p>
+                {/if}
+                <div n:foreach="$discussion['comments'] as $c">
+                    <p class="info">
+                        {var $author = $c->ref('User', 'User')}
+                        {$author->FullName}
+                        {if $author->Role == 'admin'}&nbsp;<span title="moderátor" class="mod">MOD</span> {/if}
+                        <time datetime="{$c->CreationDate|date:'c'}"
+                              class="timeago">{$c->CreationDate|date:'d.m.Y H:i'}</time>
+                    </p>
+                    {$c->Text|striptags}
 
-        <div class="answers">
-            <div n:foreach="$comment->getAnswers($c->ID) as $answer">
-                <p class="info">
-                    {var $author = $answer->ref('User', 'User')}
-                    {$author->FullName}
-                    {if $author->Role == 'admin'}&nbsp;<span title="moderátor" class="mod">MOD</span> {/if}
-                    <time datetime="{$answer->CreationDate|date:'c'}" class="timeago">{$answer->CreationDate|date:'d.m.Y H:i'}</time>
-                </p>
-                {$answer->Text|striptags}
+                    <div class="answers">
+                        <div n:foreach="$comment->getAnswers($c->ID) as $answer">
+                            <p class="info">
+                                {var $author = $answer->ref('User', 'User')}
+                                {$author->FullName}
+                                {if $author->Role == 'admin'}&nbsp;<span title="moderátor" class="mod">MOD</span> {/if}
+                                <time datetime="{$answer->CreationDate|date:'c'}"
+                                      class="timeago">{$answer->CreationDate|date:'d.m.Y H:i'}</time>
+                            </p>
+                            {$answer->Text|striptags}
+                        </div>
+                    </div>
+                </div>
+                <a n:href="Article:default $article->ID, $article->Title">&laquo;&nbsp;Späť na článok</a>
             </div>
-        </div>
-    </div>
-    <a n:href="Article:default $article->ID, $article->Title">&laquo;&nbsp;Späť na článok</a>
-</div>
+        </section>
+    </main>
 {/block}
 
 {block scripts}

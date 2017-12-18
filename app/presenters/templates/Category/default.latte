@@ -1,39 +1,46 @@
 {block content}
-<h2 n:block="title">{$openedCategory->Name}</h2>
-<article n:foreach="$articles as $article">
-    <h3><a n:href="Article:default $article->ID, $article->Title">{$article->Title}</a></h3>
-    <p class="summary">
-        Autor: {$article->ref('User', 'UserID')->FullName}
-        <span>Vydané: <time>{$article->PublishDate|date:'d.m.Y H:i'}</time></span>
-    </p>
-    <p class="perex">
-        {$article->Text|truncate:300|striptags}
-        <a n:href="Article:default $article->ID, $article->Title">Otvoriť článok</a>
-    </p>
-        <p class="summary">
-            Kategória článku: <a n:href="Category: $article->ref('Category', 'CategoryID')->ID, $article->ref('Category', 'CategoryID')->Name">{$article->ref('Category', 'CategoryID')->Name}</a>
-            <span>
+    <main>
+        {include '../@aside.latte'}
+        <section>
+            <h2 n:block="title">{$openedCategory->Name}</h2>
+            <article n:foreach="$articles as $article">
+                <h3><a n:href="Article:default $article->ID, $article->Title">{$article->Title}</a></h3>
+                <p class="summary">
+                    Autor: {$article->ref('User', 'UserID')->FullName}
+                    <span>Vydané: <time>{$article->PublishDate|date:'d.m.Y H:i'}</time></span>
+                </p>
+                <p class="perex">
+                    {$article->Text|truncate:300|striptags}
+                    <a n:href="Article:default $article->ID, $article->Title">Otvoriť článok</a>
+                </p>
+                <p class="summary">
+                    Kategória článku:
+                    <a n:href="Category: $article->ref('Category', 'CategoryID')->ID, $article->ref('Category', 'CategoryID')->Name">{$article->ref('Category', 'CategoryID')->Name}</a>
+                    <span>
                 {var $commentCount = $comment->getComments_ByArticle($article->ID)['count']}
-                Diskusia:
+                        Diskusia:
                 <a n:href="Discussion: $article->ID, $article->Title">{$comment->getComments_ByArticle($article->ID)['count']}
                     {if $commentCount == 0 || $commentCount >= 5} príspevkov
                     {elseif $commentCount == 1} príspevok
                     {else} príspevky{/if}
                 </a>
             </span>
-        </p>
-</article>
-<footer n:if="$paginator->getPageCount() > 1" class="paginator">
-    <a title="Prejsť na prvú stránku" n:if="!$paginator->isFirst()" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $paginator->getFirstPage()">&laquo;&nbsp;Prvá</a>
-    <a title="Prejsť na predchádzajúcu stránku" n:if="!$paginator->isFirst()" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $paginator->getPage() - 1">&lsaquo;&nbsp;Predchádzajúca</a>
+                </p>
+            </article>
+            <footer n:if="$paginator->getPageCount() > 1" class="paginator">
+                <a title="Prejsť na prvú stránku" n:if="!$paginator->isFirst()" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $paginator->getFirstPage()">&laquo;&nbsp;Prvá</a>
+                <a title="Prejsť na predchádzajúcu stránku" n:if="!$paginator->isFirst()" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $paginator->getPage() - 1">&lsaquo;&nbsp;Predchádzajúca</a>
 
-    {for $page = $paginator->getFirstPage(); $page <= $paginator->getPageCount(); $page++}
-        <a {if $paginator->page == $page}class="active" {/if}title="Prejsť na stránku s číslom {$page}" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $page">{$page}</a>
-    {/for}
+                {for $page = $paginator->getFirstPage(); $page <= $paginator->getPageCount(); $page++}
+                    <a {if $paginator->page == $page}class="active"
+                       {/if}title="Prejsť na stránku s číslom {$page}" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $page">{$page}</a>
+                {/for}
 
-    <a title="Prejsť na nasledujúcu stránku" n:if="!$paginator->isLast()" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $paginator->getPage() + 1">Nasledujúca&nbsp;&rsaquo;</a>
-    <a title="Prejsť na poslednú stránku" n:if="!$paginator->isLast()" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $paginator->getLastPage()">Posledná&nbsp;&raquo;</a>
-</footer>
+                <a title="Prejsť na nasledujúcu stránku" n:if="!$paginator->isLast()" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $paginator->getPage() + 1">Nasledujúca&nbsp;&rsaquo;</a>
+                <a title="Prejsť na poslednú stránku" n:if="!$paginator->isLast()" n:href="Category:default $openedCategory->ID, $openedCategory->Name, $paginator->getLastPage()">Posledná&nbsp;&raquo;</a>
+            </footer>
+        </section>
+    </main>
 {/block}
 
 {block scripts}

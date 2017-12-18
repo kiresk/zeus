@@ -1,37 +1,50 @@
 {block content}
-<article>
-    <h1 n:block="title">{$article->Title}</h1>
-    <div class="summary">Autor: {$article->ref('User', 'UserID')->FullName}    </div>
-    <div class="text indent">{$article->Text|noescape}</div>
-    <div class="summary">
-        Článok bol publikovaný <time datetime="{$article->PublishDate|date:'c'}" class="timeago">{$article->PublishDate|date:'d.m.Y H:i'}</time>
-        <nobr>v kategórií <a n:href="Category:default $article->ref('Category', 'CategoryID')->ID, $article->ref('Category', 'CategoryID')->Name">{$article->ref('Category', 'CategoryID')->Name}</a></nobr></div>
-</article>
-<div class="discussion">
-    <h4><a n:href="Discussion: $article->ID, $article->Title">Diskusia k článku{if $discussion['count'] > 0} ({$discussion['count']}){/if}</a></h4>
-    <div n:foreach="$discussion['comments'] as $c">
-        <p class="info">
-            {var $author = $c->ref('User', 'User')}
-            {$author->FullName}
-            {if $author->Role == 'admin'}&nbsp;<span title="moderátor" class="mod">MOD</span> {/if}
-            <time datetime="{$c->CreationDate|date:'c'}" class="timeago">{$c->CreationDate|date:'d.m.Y H:i'}</time>
-        </p>
-        {$c->Text|striptags|truncate:250:'...(skrátené)'}
+    <main>
+        {include '../@aside.latte'}
+        <section>
+            <article>
+                <h1 n:block="title">{$article->Title}</h1>
+                <div class="summary">Autor: {$article->ref('User', 'UserID')->FullName}    </div>
+                <div class="text indent">{$article->Text|noescape}</div>
+                <div class="summary">
+                    Článok bol publikovaný
+                    <time datetime="{$article->PublishDate|date:'c'}"
+                          class="timeago">{$article->PublishDate|date:'d.m.Y H:i'}</time>
+                    <nobr>v kategórií
+                        <a n:href="Category:default $article->ref('Category', 'CategoryID')->ID, $article->ref('Category', 'CategoryID')->Name">{$article->ref('Category', 'CategoryID')->Name}</a>
+                    </nobr>
+                </div>
+            </article>
+            <div class="discussion">
+                <h4><a n:href="Discussion: $article->ID, $article->Title">Diskusia k
+                        článku{if $discussion['count'] > 0} ({$discussion['count']}){/if}</a></h4>
+                <div n:foreach="$discussion['comments'] as $c">
+                    <p class="info">
+                        {var $author = $c->ref('User', 'User')}
+                        {$author->FullName}
+                        {if $author->Role == 'admin'}&nbsp;<span title="moderátor" class="mod">MOD</span> {/if}
+                        <time datetime="{$c->CreationDate|date:'c'}"
+                              class="timeago">{$c->CreationDate|date:'d.m.Y H:i'}</time>
+                    </p>
+                    {$c->Text|striptags|truncate:250:'...(skrátené)'}
 
-        <div class="answers">
-            <div n:foreach="$comment->getAnswers($c->ID) as $answer">
-                <p class="info">
-                    {var $author = $answer->ref('User', 'User')}
-                    {$author->FullName}
-                    {if $author->Role == 'admin'}&nbsp;<span title="moderátor" class="mod">MOD</span> {/if}
-                    <time datetime="{$answer->CreationDate|date:'c'}" class="timeago">{$answer->CreationDate|date:'d.m.Y H:i'}</time>
-                </p>
-                {$answer->Text|striptags|truncate:150:'...(skrátené)'}
+                    <div class="answers">
+                        <div n:foreach="$comment->getAnswers($c->ID) as $answer">
+                            <p class="info">
+                                {var $author = $answer->ref('User', 'User')}
+                                {$author->FullName}
+                                {if $author->Role == 'admin'}&nbsp;<span title="moderátor" class="mod">MOD</span> {/if}
+                                <time datetime="{$answer->CreationDate|date:'c'}"
+                                      class="timeago">{$answer->CreationDate|date:'d.m.Y H:i'}</time>
+                            </p>
+                            {$answer->Text|striptags|truncate:150:'...(skrátené)'}
+                        </div>
+                    </div>
+                </div>
+                <a n:href="Discussion: $article->ID, $article->Title">Zobraziť celú diskusiu</a>
             </div>
-        </div>
-    </div>
-    <a n:href="Discussion: $article->ID, $article->Title">Zobraziť celú diskusiu</a>
-</div>
+        </section>
+    </main>
 {/block}
 
 {block scripts}
