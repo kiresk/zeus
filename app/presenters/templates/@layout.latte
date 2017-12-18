@@ -20,6 +20,9 @@
     <header class="top">
         <p><a href="#">Lorem ipsum</a> dolor sit amet.</p>
     </header>
+    {foreach $flashes as $flash}
+        <div class="flash {$flash->type}">{$flash->message}</div>
+    {/foreach}
     <main>
         <aside class="menu">
             <p>Kategórie</p>

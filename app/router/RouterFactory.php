@@ -12,7 +12,7 @@ class RouterFactory {
 
     public static function createRouter(): RouteList {
         $router = new RouteList;
-        $router[] = new Route('<presenter>/<Name>-<id [0-9]+>[/stranka-<page [0-9]+>].html', [
+        $router[] = new Route('<presenter>/<Name>-<ID [0-9]+>[/stranka-<page [0-9]+>].html', [
             NULL => [
                 Route::FILTER_OUT => function(array $params) {
                     if (!empty($params['Name'])) {
@@ -21,7 +21,7 @@ class RouterFactory {
                     return $params;
                 }
             ],
-            'presenter' => [
+            Route::PRESENTER_KEY => [
                 Route::VALUE => 'Homepage',
                 Route::FILTER_TABLE => [
                     'kategoria' => 'Category',
